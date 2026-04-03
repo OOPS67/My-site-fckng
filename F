@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>SECRET SITE</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f0f0f;
+      color: white;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .box {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      width: 300px;
+      margin: auto;
+    }
+
+    button {
+      padding: 12px;
+      width: 100%;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #00c853;
+      color: white;
+      font-size: 16px;
+    }
+
+    .code {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #00e5ff;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- 🔐 ТВОЯ ЧАСТЬ (ПАРОЛЬ) -->
+<script>
+let password = prompt("введите пароль");
+
+if (password !== "1234") {
+  alert("НЕ ДОСТУПНО");
+  document.body.innerHTML = "";
+}
+</script>
+
+<h1>SECRET SITE</h1>
+<p>ДОСТУП ЧЕРЕЗ ОПЛАТУ</p>
+
+<!-- 💳 ПЛАТЁЖНЫЙ БЛОК -->
+<div class="box">
+  <h2>Оплата доступа</h2>
+  <p>Цена: 25000 ₸</p>
+
+  <button onclick="pay()">ОПЛАТИТЬ</button>
+
+  <div id="access" class="code"></div>
+</div>
+
+<script>
+function pay() {
+  // открываем каспи
+  window.open("https://kaspi.kz", "_blank");
+
+  // имитация подтверждения оплаты
+  setTimeout(() => {
+    document.getElementById("access").innerHTML =
+      "Ваш код доступа: M12";
+  }, 3000);
+}
+</script>
+
+</body>
+</html>
